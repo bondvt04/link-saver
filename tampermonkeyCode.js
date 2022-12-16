@@ -46,10 +46,13 @@ document.addEventListener('contextmenu', function(event) {
         target = target.parentNode;
         href = target.href;
     }
-    if (href) {
-        window.rightClickPairs.push({
-            text,
-            href,
-        });
+    // if clicked not on link, save current page
+    if (!href) {
+        href = window.location.href;
+        text = document.title;
     }
+    window.rightClickPairs.push({
+        text,
+        href,
+    });
 }, false);
