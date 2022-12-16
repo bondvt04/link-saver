@@ -38,14 +38,20 @@ document.addEventListener('contextmenu', function(event) {
     }
 
     let target = event.target;
-    let href = target.href;
-    const text = target.firstChild;
+    let text = '';
+    let href = '';
 
-    // get most deep text and first found href
-    while (!href && target.parentNode) {
-        target = target.parentNode;
-        href = target.href;
+    if (target) {
+        text = target.firstChild;
+        let href = target.href;
+
+        // get most deep text and first found href
+        while (!href && target.parentNode) {
+            target = target.parentNode;
+            href = target.href;
+        }
     }
+    
     // if clicked not on link, save current page
     if (!href) {
         href = window.location.href;
