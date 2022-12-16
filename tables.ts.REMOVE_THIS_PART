@@ -1,0 +1,17 @@
+export default [
+  {
+      "name": "cars",
+      "spreadsheetId": "1-WDMslA8qcu2Lggj2sFF7gyh7GBFStNDGkG5LdY8Y6g",
+      "tabs": ["all","audi","bmw"]
+  },
+  {
+    "name": "cats",
+    "spreadsheetId": "1dGsN1WZuiWl2dfdjrcpUQkX_JBeyVRHeHNvnt-on9ho",
+    "tabs": ["all","black","red","white","gray","multicolor"]
+  },
+  {
+    "name": "inbox",
+    "spreadsheetId": "1_2hOOFqRrQ-XUtND6jdzJKZ3jg-gGX6TrgMHWQ-kgYc",
+    "tabs": ["inbox"]
+  }
+]

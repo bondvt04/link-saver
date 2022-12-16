@@ -1,0 +1,26 @@
+{
+  "name": "links-saver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node googleSheetsServer.ts",
+    "refreshGoogleAuth": "ts-node refreshGoogleAuth.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.13",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@googleapis/docs": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "google-auth-library": "^8.7.0",
+    "googleapis": "^109.0.1",
+    "open": "^8.4.0",
+    "server-destroy": "^1.0.1",
+    "typescript": "^4.9.4"
+  }
+}
