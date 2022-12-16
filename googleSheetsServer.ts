@@ -79,6 +79,7 @@ const server = http.createServer(async (req: any, res: any) => {
   res.end();
 });
 server.listen(LOCAL_SERVER_PORT);
+console.log(`Listen port ${LOCAL_SERVER_PORT}`);
 
 // Number of cell which is still empty. For example, if A1:A108 are filled,
 // it will return 109
