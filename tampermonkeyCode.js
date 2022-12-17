@@ -12,6 +12,7 @@
 
 const TABLES = "<PUT_tables.json_CONTENT_HERE>";
 const LOCAL_SERVER_PORT = "<PUT_HERE_VALUE_FROM_.env_FILE>";
+const LOCAL_SERVER_URL_PATH = '/write-href-to-google-sheet'; // make sure its same with .env value
 
 (function() {
     TABLES.forEach(table => {
@@ -23,9 +24,18 @@ const LOCAL_SERVER_PORT = "<PUT_HERE_VALUE_FROM_.env_FILE>";
                 }
                 const { text, href } = window.rightClickPairs[window.rightClickPairs.length - 1];
         
-                const xhttp = new XMLHttpRequest();
-                xhttp.open('POST', `http://localhost:${LOCAL_SERVER_PORT}/?tableName=${table.name}&tabName=${tab}&href=${encodeURI(href)}`, true);
-                xhttp.send();
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', `http://localhost:${LOCAL_SERVER_PORT}${LOCAL_SERVER_URL_PATH}?tableName=${table.name}&tabName=${tab}&href=${encodeURI(href)}`, true);
+                xhr.onload = () => {
+                    if (xhr.readyState === xhr.DONE) {
+                        if (xhr.status === 200) {
+                            alert(`Done. ${xhr.responseText}`);
+                        } else {
+                            alert(`ERROR! ${xhr.responseText}`);
+                        }
+                    }
+                };
+                xhr.send();
             });
         })
     });
@@ -43,7 +53,7 @@ document.addEventListener('contextmenu', function(event) {
 
     if (target) {
         text = target.firstChild;
-        let href = target.href;
+        href = target.href;
 
         // get most deep text and first found href
         while (!href && target.parentNode) {

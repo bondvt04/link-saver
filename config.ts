@@ -23,3 +23,4 @@ export const OAUTH_CALLBACK_PATH = process.env.OAUTH_CALLBACK_PATH;
 export const OAUTH_CALLBACK_PORT = process.env.OAUTH_CALLBACK_PORT;
 export const GOOGLE_TOKENS_FILE_PATH = process.env.GOOGLE_TOKENS_FILE_PATH;
 export const LOCAL_SERVER_PORT = process.env.LOCAL_SERVER_PORT;
+export const LOCAL_SERVER_URL_PATH = process.env.LOCAL_SERVER_URL_PATH;
